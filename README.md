@@ -1,8 +1,3 @@
-# `@ubiquity/ts-template`
+# Stripe banking as a service
 
-This template repository includes support for the following:
-
-- TypeScript
-- Environment Variables
-- Conventional Commits
-- Automatic deployment to Cloudflare Pages
+Playing with Stripe's banking as a service API
