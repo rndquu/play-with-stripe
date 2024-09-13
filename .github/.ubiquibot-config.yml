@@ -1,0 +1,89 @@
+plugins:
+  issues.closed:
+    - uses:
+      - plugin: rndquu/conversation-rewards@feat/104
+        with:
+          evmNetworkId: 100
+          evmPrivateEncrypted: "hrM1fCSCgns6BbqvG_S-miNAsa6izKy_c9BmoDjCukY6xCES7X-T6MFVLQPL319Wu3bEkUZXgiS4mub3x1ZaL_fP_tCHC5pn6T-3DZDGJP8YRxoGDr65muupQ7Aa6WJLNQQL6pfK9hxRfdLSaIhm5BrMpFhMgEL92Mg"
+          erc20RewardToken: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d"
+          incentives:
+            userExtractor:
+              enabled: true
+              redeemTask: true
+            dataPurge:
+              enabled: true
+            formattingEvaluator:
+              multipliers:
+                - role: [ ISSUE_SPECIFICATION ]
+                  multiplier: 3
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                    html:
+                      br: 0
+                      code: 5
+                      p: 1
+                      em: 0
+                      img: 0
+                      strong: 0
+                      blockquote: 0
+                      h1: 1
+                      h2: 1
+                      h3: 1
+                      h4: 1
+                      h5: 1
+                      h6: 1
+                      a: 5
+                      li: 1
+                      td: 1
+                      hr: 0
+                - role: [ ISSUE_AUTHOR ]
+                  multiplier: 1
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.2
+                - role: [ ISSUE_ASSIGNEE ]
+                  multiplier: 0
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0
+                - role: [ ISSUE_COLLABORATOR ]
+                  multiplier: 1
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                - role: [ ISSUE_CONTRIBUTOR ]
+                  multiplier: 0.25
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                - role: [ PULL_SPECIFICATION ]
+                  multiplier: 0
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0
+                - role: [ PULL_AUTHOR ]
+                  multiplier: 0
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.2
+                - role: [ PULL_ASSIGNEE ]
+                  multiplier: 1
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                - role: [ PULL_COLLABORATOR ]
+                  multiplier: 1
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                - role: [ PULL_CONTRIBUTOR ]
+                  multiplier: 0.25
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+            permitGeneration:
+              enabled: true
+            githubComment:
+              post: true
+              debug: false
